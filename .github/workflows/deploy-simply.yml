@@ -43,12 +43,15 @@ jobs:
           ftp_pass="${SIMPLY_FTP_PASSWORD:-${FTP_PASSWORD:-${SIMPLY_FTP_PASSWORD_VAR:-$FTP_PASSWORD_VAR}}}"
           remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_REMOTE_DIR:-${SIMPLY_CASTVOLUME_REMOTE_DIR_VAR:-${SIMPLY_REMOTE_DIR_VAR:-/public_html/}}}}"
 
+          host_sources="SIMPLY_FTP_HOST=$( [ -n \"${SIMPLY_FTP_HOST}\" ] && echo yes || echo no ),FTP_SERVER=$( [ -n \"${FTP_SERVER}\" ] && echo yes || echo no ),vars.SIMPLY_FTP_HOST=$( [ -n \"${SIMPLY_FTP_HOST_VAR}\" ] && echo yes || echo no ),vars.FTP_SERVER=$( [ -n \"${FTP_SERVER_VAR}\" ] && echo yes || echo no )"
+          user_sources="SIMPLY_FTP_USERNAME=$( [ -n \"${SIMPLY_FTP_USERNAME}\" ] && echo yes || echo no ),FTP_USERNAME=$( [ -n \"${FTP_USERNAME}\" ] && echo yes || echo no ),vars.SIMPLY_FTP_USERNAME=$( [ -n \"${SIMPLY_FTP_USERNAME_VAR}\" ] && echo yes || echo no ),vars.FTP_USERNAME=$( [ -n \"${FTP_USERNAME_VAR}\" ] && echo yes || echo no )"
+
           if [ -z "${ftp_host}" ]; then
-            echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable."
+            echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable. Sources: ${host_sources}"
             exit 1
           fi
           if [ -z "${ftp_user}" ]; then
-            echo "::error::Missing FTP username. Add SIMPLY_FTP_USERNAME or FTP_USERNAME as a GitHub secret/variable."
+            echo "::error::Missing FTP username. Add SIMPLY_FTP_USERNAME or FTP_USERNAME as a GitHub secret/variable. Sources: ${user_sources}"
             exit 1
           fi
           if [ -z "${ftp_pass}" ]; then
