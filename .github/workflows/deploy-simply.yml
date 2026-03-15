@@ -10,6 +10,11 @@ concurrency:
   group: simply-deploy
   cancel-in-progress: true
 
+env:
+  FTP_HOST: ${{ secrets.SIMPLY_FTP_HOST || secrets.FTP_SERVER || vars.SIMPLY_FTP_HOST || vars.FTP_SERVER }}
+  FTP_USER: ${{ secrets.SIMPLY_FTP_USERNAME || secrets.FTP_USERNAME || vars.SIMPLY_FTP_USERNAME || vars.FTP_USERNAME }}
+  FTP_PASS: ${{ secrets.SIMPLY_FTP_PASSWORD || secrets.FTP_PASSWORD || vars.SIMPLY_FTP_PASSWORD || vars.FTP_PASSWORD }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,12 +22,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate FTP configuration
+        shell: bash
+        run: |
+          if [ -z "${FTP_HOST}" ]; then
+            echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable."
+            exit 1
+          fi
+          if [ -z "${FTP_USER}" ]; then
+            echo "::error::Missing FTP username. Add SIMPLY_FTP_USERNAME or FTP_USERNAME as a GitHub secret/variable."
+            exit 1
+          fi
+          if [ -z "${FTP_PASS}" ]; then
+            echo "::error::Missing FTP password. Add SIMPLY_FTP_PASSWORD or FTP_PASSWORD as a GitHub secret/variable."
+            exit 1
+          fi
+
       - name: Upload to Simply.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.SIMPLY_FTP_HOST }}
-          username: ${{ secrets.SIMPLY_FTP_USERNAME }}
-          password: ${{ secrets.SIMPLY_FTP_PASSWORD }}
+          server: ${{ env.FTP_HOST }}
+          username: ${{ env.FTP_USER }}
+          password: ${{ env.FTP_PASS }}
           protocol: ftp
           port: 21
           local-dir: ./
