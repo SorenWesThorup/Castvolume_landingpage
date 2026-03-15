@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CastVolume | Fast volume control for Google Cast devices</title>
+    <meta
+      name="description"
+      content="CastVolume is a native iPhone app and widget for instant volume and mute control on Google Cast-enabled TVs and speakers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <img src="./assets/app-icon.png" alt="CastVolume app icon" />
+        <span>CastVolume</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+      <a
+        class="button button-small"
+        href="https://apps.apple.com/us/app/cast-volume/id6759741348"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Get the app</a
+      >
+    </header>
+
+    <main id="top">
+      <section class="hero section reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Native iOS app + widget</p>
+          <h1>Your fastest way to control TV volume from iPhone.</h1>
+          <p class="lead">
+            CastVolume gives you instant volume and mute control for Google Cast-enabled TVs, speakers,
+            and receivers on your local Wi-Fi. No sign-in. No pairing ritual. No queue clutter.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button"
+              href="https://apps.apple.com/us/app/cast-volume/id6759741348"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download on App Store</a
+            >
+            <a class="button button-ghost" href="#how-it-works">See how it works</a>
+          </div>
+          <ul class="hero-points" aria-label="Product highlights">
+            <li>Discovers devices on your local network</li>
+            <li>Pin favorites for widget control</li>
+            <li>Quick +/- volume and mute from lock screen widgets</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mockup">
+            <div class="mockup-screen">
+              <p class="mockup-title">Living Room TV</p>
+              <p class="mockup-status">Connected on Wi-Fi</p>
+              <div class="mockup-slider">
+                <span class="slider-fill"></span>
+              </div>
+              <div class="mockup-controls">
+                <button>-</button>
+                <button class="strong">Mute</button>
+                <button>+</button>
+              </div>
+            </div>
+          </div>
+          <img src="./assets/discover.png" alt="" class="preview preview-discover" />
+          <img src="./assets/widget.png" alt="" class="preview preview-widget" />
+        </div>
+      </section>
+
+      <section id="features" class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Built for everyday control</p>
+          <h2>Simple power, right where you need it</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Fast discovery</h3>
+            <p>Find Google Cast-enabled devices over Bonjour on the same network.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Precision volume</h3>
+            <p>Use slider control or quick +/- steps to match your preferred volume pace.</p>
+          </article>
+          <article class="feature-card">
+            <h3>One-tap mute</h3>
+            <p>Silence interruptions instantly without opening your streaming app.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Pinned devices</h3>
+            <p>Choose favorites so your main devices are always within reach.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Interactive widgets</h3>
+            <p>Send commands from Home Screen and Lock Screen widgets on iOS 17+.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Focused experience</h3>
+            <p>No account, no media browsing, no playback queue management. Just volume.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="section section-alt reveal">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>Three steps to faster volume control</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>1</span>
+            <div>
+              <h3>Open CastVolume and tap Discover</h3>
+              <p>Allow local network access so the app can find Cast-enabled devices nearby.</p>
+            </div>
+          </li>
+          <li>
+            <span>2</span>
+            <div>
+              <h3>Select your TV or speaker</h3>
+              <p>Pick a device, pin it, and keep it ready for quick access in the app and widgets.</p>
+            </div>
+          </li>
+          <li>
+            <span>3</span>
+            <div>
+              <h3>Control volume anywhere</h3>
+              <p>Use in-app controls or widget buttons for instant volume up, down, and mute.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="pricing" class="section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Plans</p>
+          <h2>Start free, upgrade when you need more widget control</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Free</h3>
+            <p class="price-value">$0</p>
+            <ul>
+              <li>In-app volume + mute controls</li>
+              <li>Device discovery + pinning</li>
+              <li>Widgets control your top pinned device</li>
+            </ul>
+          </article>
+          <article class="price-card highlight">
+            <p class="badge">Popular</p>
+            <h3>Premium</h3>
+            <p class="price-value">Unlock advanced widget flexibility</p>
+            <ul>
+              <li>Assign different pinned devices per widget</li>
+              <li>Faster multi-room control setup</li>
+              <li>Support ongoing development</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="privacy" class="section section-alt reveal">
+        <div class="privacy-card">
+          <p class="eyebrow">Privacy first</p>
+          <h2>Your control stays local</h2>
+          <p>
+            CastVolume is designed for local-network control. It connects to devices on your Wi-Fi to send
+            volume and mute commands. No account is required and no cloud dashboard is needed to get started.
+          </p>
+          <ul>
+            <li>Requires iPhone and Cast device on the same Wi-Fi network</li>
+            <li>Uses iOS local network permission for discovery</li>
+            <li>No sign-in flow to use core controls</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="download" class="section reveal">
+        <div class="download-cta">
+          <h2>Ready to control volume faster?</h2>
+          <p>Install CastVolume on iPhone and take volume control out of app-switching chaos.</p>
+          <div class="hero-actions">
+            <a
+              class="button"
+              href="https://apps.apple.com/us/app/cast-volume/id6759741348"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download on App Store</a
+            >
+            <a class="button button-ghost" href="mailto:support@castvolume.app">Contact support</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CastVolume</p>
+      <p><span id="year"></span> CastVolume Team. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+# CastVolume Landing Page
+
+Static landing page for CastVolume, ready to deploy to Simply.com web hosting.
+
+## Project structure
+
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/`
+- `.github/workflows/deploy-simply.yml` (auto deploy on push to `main`)
+
+## Run locally
+
+```bash
+cd /Users/sorenthorup/Documents/xcode/CastVolume_Feb2026/landing-page
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080`.
+
+## Create GitHub repository
+
+1. Create a new empty GitHub repository (for example: `castvolume-landing-page`).
+2. Run:
+
+```bash
+cd /Users/sorenthorup/Documents/xcode/CastVolume_Feb2026/landing-page
+git init
+git add .
+git commit -m "Initial CastVolume landing page"
+git branch -M main
+git remote add origin <YOUR_GITHUB_REPO_URL>
+git push -u origin main
+```
+
+## Connect GitHub to Simply.com
+
+1. In Simply.com, locate your FTP credentials:
+- FTP host/server
+- FTP username
+- FTP password
+2. Confirm your website files should be deployed to `/public_html/`.
+3. In GitHub repo settings, add these Actions secrets:
+- `SIMPLY_FTP_HOST`
+- `SIMPLY_FTP_USERNAME`
+- `SIMPLY_FTP_PASSWORD`
+4. Push to `main` (or run the workflow manually from Actions).
+
+The workflow uploads this repo to `/public_html/` using FTP Deploy Action.
+
+## Notes
+
+- If your site is in a subfolder, update `server-dir` in `.github/workflows/deploy-simply.yml`.
+- If you want encrypted transfer, switch `protocol` and `port` to the values provided by Simply.com.
