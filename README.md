@@ -49,6 +49,17 @@ git push -u origin main
 
 The workflow uploads this repo to `/public_html/` using FTP Deploy Action.
 
+## TLS and security checklist
+
+If the browser shows `Not Secure` on your domain, verify all of this in Simply:
+
+1. Domain mapping:
+- `castvolume.kommaconsulting.com`
+- `www.castvolume.kommaconsulting.com`
+2. SSL certificate is issued and active for both hostnames (Let's Encrypt or purchased cert).
+3. DNS for both hostnames points to your webhotel.
+4. Keep `.htaccess` deployed (this repo includes HTTPS redirect + security headers).
+
 ## Notes
 
 - If your site is in a subfolder, update `server-dir` in `.github/workflows/deploy-simply.yml`.
