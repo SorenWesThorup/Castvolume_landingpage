@@ -1,6 +1,7 @@
 # Force HTTPS for all requests.
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
