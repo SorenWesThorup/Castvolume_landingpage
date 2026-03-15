@@ -23,17 +23,25 @@ jobs:
         env:
           SIMPLY_FTP_HOST: ${{ secrets.SIMPLY_FTP_HOST }}
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          SIMPLY_FTP_HOST_VAR: ${{ vars.SIMPLY_FTP_HOST }}
+          FTP_SERVER_VAR: ${{ vars.FTP_SERVER }}
           SIMPLY_FTP_USERNAME: ${{ secrets.SIMPLY_FTP_USERNAME }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          SIMPLY_FTP_USERNAME_VAR: ${{ vars.SIMPLY_FTP_USERNAME }}
+          FTP_USERNAME_VAR: ${{ vars.FTP_USERNAME }}
           SIMPLY_FTP_PASSWORD: ${{ secrets.SIMPLY_FTP_PASSWORD }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          SIMPLY_FTP_PASSWORD_VAR: ${{ vars.SIMPLY_FTP_PASSWORD }}
+          FTP_PASSWORD_VAR: ${{ vars.FTP_PASSWORD }}
           SIMPLY_REMOTE_DIR: ${{ secrets.SIMPLY_REMOTE_DIR }}
           SIMPLY_CASTVOLUME_REMOTE_DIR: ${{ secrets.SIMPLY_CASTVOLUME_REMOTE_DIR }}
+          SIMPLY_REMOTE_DIR_VAR: ${{ vars.SIMPLY_REMOTE_DIR }}
+          SIMPLY_CASTVOLUME_REMOTE_DIR_VAR: ${{ vars.SIMPLY_CASTVOLUME_REMOTE_DIR }}
         run: |
-          ftp_host="${SIMPLY_FTP_HOST:-$FTP_SERVER}"
-          ftp_user="${SIMPLY_FTP_USERNAME:-$FTP_USERNAME}"
-          ftp_pass="${SIMPLY_FTP_PASSWORD:-$FTP_PASSWORD}"
-          remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_REMOTE_DIR:-/public_html/}}"
+          ftp_host="${SIMPLY_FTP_HOST:-${FTP_SERVER:-${SIMPLY_FTP_HOST_VAR:-$FTP_SERVER_VAR}}}"
+          ftp_user="${SIMPLY_FTP_USERNAME:-${FTP_USERNAME:-${SIMPLY_FTP_USERNAME_VAR:-$FTP_USERNAME_VAR}}}"
+          ftp_pass="${SIMPLY_FTP_PASSWORD:-${FTP_PASSWORD:-${SIMPLY_FTP_PASSWORD_VAR:-$FTP_PASSWORD_VAR}}}"
+          remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_REMOTE_DIR:-${SIMPLY_CASTVOLUME_REMOTE_DIR_VAR:-${SIMPLY_REMOTE_DIR_VAR:-/public_html/}}}}"
 
           if [ -z "${ftp_host}" ]; then
             echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable."
