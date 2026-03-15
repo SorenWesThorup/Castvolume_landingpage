@@ -43,8 +43,16 @@ jobs:
           ftp_pass="${SIMPLY_FTP_PASSWORD:-${FTP_PASSWORD:-${SIMPLY_FTP_PASSWORD_VAR:-$FTP_PASSWORD_VAR}}}"
           remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_REMOTE_DIR:-${SIMPLY_CASTVOLUME_REMOTE_DIR_VAR:-${SIMPLY_REMOTE_DIR_VAR:-/public_html/}}}}"
 
-          host_sources="SIMPLY_FTP_HOST=$( [ -n \"${SIMPLY_FTP_HOST}\" ] && echo yes || echo no ),FTP_SERVER=$( [ -n \"${FTP_SERVER}\" ] && echo yes || echo no ),vars.SIMPLY_FTP_HOST=$( [ -n \"${SIMPLY_FTP_HOST_VAR}\" ] && echo yes || echo no ),vars.FTP_SERVER=$( [ -n \"${FTP_SERVER_VAR}\" ] && echo yes || echo no )"
-          user_sources="SIMPLY_FTP_USERNAME=$( [ -n \"${SIMPLY_FTP_USERNAME}\" ] && echo yes || echo no ),FTP_USERNAME=$( [ -n \"${FTP_USERNAME}\" ] && echo yes || echo no ),vars.SIMPLY_FTP_USERNAME=$( [ -n \"${SIMPLY_FTP_USERNAME_VAR}\" ] && echo yes || echo no ),vars.FTP_USERNAME=$( [ -n \"${FTP_USERNAME_VAR}\" ] && echo yes || echo no )"
+          source_flag() {
+            if [ -n "$1" ]; then
+              echo yes
+            else
+              echo no
+            fi
+          }
+
+          host_sources="SIMPLY_FTP_HOST=$(source_flag "${SIMPLY_FTP_HOST}"),FTP_SERVER=$(source_flag "${FTP_SERVER}"),vars.SIMPLY_FTP_HOST=$(source_flag "${SIMPLY_FTP_HOST_VAR}"),vars.FTP_SERVER=$(source_flag "${FTP_SERVER_VAR}")"
+          user_sources="SIMPLY_FTP_USERNAME=$(source_flag "${SIMPLY_FTP_USERNAME}"),FTP_USERNAME=$(source_flag "${FTP_USERNAME}"),vars.SIMPLY_FTP_USERNAME=$(source_flag "${SIMPLY_FTP_USERNAME_VAR}"),vars.FTP_USERNAME=$(source_flag "${FTP_USERNAME_VAR}")"
 
           if [ -z "${ftp_host}" ]; then
             echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable. Sources: ${host_sources}"
