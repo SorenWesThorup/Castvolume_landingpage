@@ -33,15 +33,13 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           SIMPLY_FTP_PASSWORD_VAR: ${{ vars.SIMPLY_FTP_PASSWORD }}
           FTP_PASSWORD_VAR: ${{ vars.FTP_PASSWORD }}
-          SIMPLY_REMOTE_DIR: ${{ secrets.SIMPLY_REMOTE_DIR }}
           SIMPLY_CASTVOLUME_REMOTE_DIR: ${{ secrets.SIMPLY_CASTVOLUME_REMOTE_DIR }}
-          SIMPLY_REMOTE_DIR_VAR: ${{ vars.SIMPLY_REMOTE_DIR }}
           SIMPLY_CASTVOLUME_REMOTE_DIR_VAR: ${{ vars.SIMPLY_CASTVOLUME_REMOTE_DIR }}
         run: |
           ftp_host="${SIMPLY_FTP_HOST:-${FTP_SERVER:-${SIMPLY_FTP_HOST_VAR:-$FTP_SERVER_VAR}}}"
           ftp_user="${SIMPLY_FTP_USERNAME:-${FTP_USERNAME:-${SIMPLY_FTP_USERNAME_VAR:-$FTP_USERNAME_VAR}}}"
           ftp_pass="${SIMPLY_FTP_PASSWORD:-${FTP_PASSWORD:-${SIMPLY_FTP_PASSWORD_VAR:-$FTP_PASSWORD_VAR}}}"
-          remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_REMOTE_DIR:-${SIMPLY_CASTVOLUME_REMOTE_DIR_VAR:-${SIMPLY_REMOTE_DIR_VAR:-/public_html/}}}}"
+          remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_CASTVOLUME_REMOTE_DIR_VAR}}"
 
           if [ -z "${ftp_host}" ]; then
             echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable."
@@ -53,6 +51,10 @@ jobs:
           fi
           if [ -z "${ftp_pass}" ]; then
             echo "::error::Missing FTP password. Add SIMPLY_FTP_PASSWORD or FTP_PASSWORD as a GitHub secret/variable."
+            exit 1
+          fi
+          if [ -z "${remote_dir}" ]; then
+            echo "::error::Missing CastVolume remote dir. Add SIMPLY_CASTVOLUME_REMOTE_DIR and point it at the subdomain web root, not /public_html/."
             exit 1
           fi
 

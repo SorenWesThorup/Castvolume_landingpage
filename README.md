@@ -45,9 +45,10 @@ git push -u origin main
 - `SIMPLY_FTP_HOST`
 - `SIMPLY_FTP_USERNAME`
 - `SIMPLY_FTP_PASSWORD`
+ - `SIMPLY_CASTVOLUME_REMOTE_DIR` (must be the CastVolume subdomain folder, not `/public_html/`)
 4. Push to `main` (or run the workflow manually from Actions).
 
-The workflow uploads this repo to `/public_html/` using FTP Deploy Action.
+The workflow uploads this repo only to `SIMPLY_CASTVOLUME_REMOTE_DIR` using FTP Deploy Action.
 
 ## TLS and security checklist
 
@@ -62,5 +63,5 @@ If the browser shows `Not Secure` on your domain, verify all of this in Simply:
 
 ## Notes
 
-- If your site is in a subfolder, update `server-dir` in `.github/workflows/deploy-simply.yml`.
+- This repo is intentionally locked to the CastVolume subdomain path and will fail if `SIMPLY_CASTVOLUME_REMOTE_DIR` is missing.
 - If you want encrypted transfer, switch `protocol` and `port` to the values provided by Simply.com.
