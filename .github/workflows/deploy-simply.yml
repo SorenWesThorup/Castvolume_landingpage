@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Resolve FTP configuration
         id: ftp_config
@@ -41,6 +41,10 @@ jobs:
           ftp_pass="${SIMPLY_FTP_PASSWORD:-${FTP_PASSWORD:-${SIMPLY_FTP_PASSWORD_VAR:-$FTP_PASSWORD_VAR}}}"
           remote_dir="${SIMPLY_CASTVOLUME_REMOTE_DIR:-${SIMPLY_CASTVOLUME_REMOTE_DIR_VAR}}"
 
+          if [ -n "${remote_dir}" ] && [ "${remote_dir%/}" = "${remote_dir}" ]; then
+            remote_dir="${remote_dir}/"
+          fi
+
           if [ -z "${ftp_host}" ]; then
             echo "::error::Missing FTP host. Add SIMPLY_FTP_HOST or FTP_SERVER as a GitHub secret/variable."
             exit 1
@@ -64,7 +68,7 @@ jobs:
           echo "remote_dir=${remote_dir}" >> "${GITHUB_OUTPUT}"
 
       - name: Upload to Simply.com via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ steps.ftp_config.outputs.host }}
           username: ${{ steps.ftp_config.outputs.user }}
