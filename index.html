@@ -11,8 +11,33 @@
     <title>CastVolume | Fast volume control for Google Cast devices</title>
     <meta
       name="description"
-      content="CastVolume is a native iPhone app and widget for instant volume and mute control on Google Cast-enabled TVs and speakers."
+      content="CastVolume is a native iPhone app with interactive Home Screen widgets for instant volume and mute control on Google Cast-enabled TVs and speakers."
     />
+    <link rel="canonical" href="https://castvolume.kommaconsulting.com/" />
+    <meta name="theme-color" content="#07131b" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CastVolume" />
+    <meta property="og:title" content="CastVolume | Fast volume control for Google Cast devices" />
+    <meta
+      property="og:description"
+      content="Instant volume and mute for your Cast TVs and speakers - from the app or a Home Screen widget. No account needed."
+    />
+    <meta property="og:url" content="https://castvolume.kommaconsulting.com/" />
+    <meta property="og:image" content="https://castvolume.kommaconsulting.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CastVolume | Fast volume control for Google Cast devices" />
+    <meta
+      name="twitter:description"
+      content="Instant volume and mute for your Cast TVs and speakers - from the app or a Home Screen widget. No account needed."
+    />
+    <meta name="twitter:image" content="https://castvolume.kommaconsulting.com/assets/og-image.png" />
+
+    <link rel="icon" href="./assets/icon-64.png" sizes="64x64" type="image/png" />
+    <link rel="icon" href="./assets/icon-512.png" sizes="512x512" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/icon-180.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,9 +54,11 @@
       <span class="orb orb-c"></span>
     </div>
 
+    <a class="skip-link" href="#top">Skip to content</a>
+
     <header class="site-header">
       <a class="brand" href="#top">
-        <img src="./assets/app-icon.png" alt="CastVolume app icon" />
+        <img src="./assets/icon-64.png" alt="" width="64" height="64" />
         <span>CastVolume</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
@@ -53,7 +80,7 @@
     <main id="top">
       <section class="hero section reveal">
         <div class="hero-copy">
-          <p class="eyebrow">Native iOS app + widget</p>
+          <p class="eyebrow">Native iOS app + widgets</p>
           <h1>Your fastest way to control TV volume from iPhone.</h1>
           <p class="lead">
             CastVolume gives you instant volume and mute control for Google Cast-enabled TVs, speakers,
@@ -70,22 +97,36 @@
             <a class="button button-ghost" href="#how-it-works">See how it works</a>
           </div>
           <ul class="hero-points" aria-label="Product highlights">
-            <li>Discovers devices on your local network</li>
-            <li>Pin favorites for widget control</li>
-            <li>Quick +/- volume and mute from lock screen widgets</li>
+            <li>Finds Cast devices on your Wi-Fi in seconds</li>
+            <li>Pin the rooms you use and control each one directly</li>
+            <li>Volume up, down, and mute straight from a Home Screen widget</li>
           </ul>
         </div>
         <div class="hero-visual">
           <figure class="phone-shot shot-main">
             <img
-              src="./assets/discover.png?v=20260315c"
-              alt="CastVolume discover and control screen"
+              src="./assets/screenshots/screenshot-4.jpg"
+              alt="CastVolume app showing two pinned devices with volume sliders"
+              width="600"
+              height="1299"
+            />
+          </figure>
+          <figure class="phone-shot shot-left">
+            <img
+              src="./assets/screenshots/screenshot-1.jpg"
+              alt="Two CastVolume widgets on the iPhone Home Screen"
+              width="600"
+              height="1299"
+              loading="lazy"
             />
           </figure>
           <figure class="phone-shot shot-right">
             <img
-              src="./assets/pin.png?v=20260315c"
-              alt="CastVolume device pinning screen"
+              src="./assets/screenshots/screenshot-2.jpg"
+              alt="CastVolume in dark mode with discovered Cast devices"
+              width="600"
+              height="1299"
+              loading="lazy"
             />
           </figure>
         </div>
@@ -93,25 +134,59 @@
 
       <section id="screenshots" class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Official App Store captures</p>
+          <p class="eyebrow">Straight from the App Store listing</p>
           <h2>Real screens from the shipping app</h2>
         </div>
         <div class="screenshots-grid">
           <figure class="screenshot-card">
             <img
-              src="./assets/discover.png?v=20260315c"
-              alt="CastVolume discover and control interface"
+              src="./assets/screenshots/screenshot-4.jpg"
+              alt="Pinned devices with volume sliders in light mode"
+              width="600"
+              height="1299"
               loading="lazy"
             />
-            <figcaption>Discover and control</figcaption>
+            <figcaption>Pin your rooms, control each one</figcaption>
           </figure>
           <figure class="screenshot-card">
             <img
-              src="./assets/pin.png?v=20260315c"
-              alt="CastVolume pinning devices for widgets"
+              src="./assets/screenshots/screenshot-2.jpg"
+              alt="Discovered Cast devices listed in dark mode"
+              width="600"
+              height="1299"
               loading="lazy"
             />
-            <figcaption>Pin and configure</figcaption>
+            <figcaption>Discover everything on your Wi-Fi</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="./assets/screenshots/screenshot-1.jpg"
+              alt="Medium CastVolume widgets with minus, mute, and plus buttons"
+              width="600"
+              height="1299"
+              loading="lazy"
+            />
+            <figcaption>Medium widget: down, mute, up</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="./assets/screenshots/screenshot-3.jpg"
+              alt="Two small CastVolume widgets side by side on the Home Screen"
+              width="600"
+              height="1299"
+              loading="lazy"
+            />
+            <figcaption>Small widget: one room per tile</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="./assets/screenshots/screenshot-5.jpg"
+              alt="CastVolume settings with volume step, appearance, and widget options"
+              width="600"
+              height="1299"
+              loading="lazy"
+            />
+            <figcaption>Step size, themes, widget setup</figcaption>
           </figure>
         </div>
       </section>
@@ -124,27 +199,30 @@
         <div class="feature-grid">
           <article class="feature-card">
             <h3>Fast discovery</h3>
-            <p>Find Google Cast-enabled devices over Bonjour on the same network.</p>
+            <p>Tap Discover to find Google Cast-enabled devices over Bonjour on the same network.</p>
           </article>
           <article class="feature-card">
             <h3>Precision volume</h3>
-            <p>Use slider control or quick +/- steps to match your preferred volume pace.</p>
+            <p>Drag the slider for an exact level, or step up and down at 1%, 3%, or 5% per tap.</p>
           </article>
           <article class="feature-card">
             <h3>One-tap mute</h3>
             <p>Silence interruptions instantly without opening your streaming app.</p>
           </article>
           <article class="feature-card">
-            <h3>Pinned devices</h3>
-            <p>Choose favorites so your main devices are always within reach.</p>
+            <h3>Pinned rooms</h3>
+            <p>Pin your regulars to the top of the app, each with its own slider and live level.</p>
           </article>
           <article class="feature-card">
             <h3>Interactive widgets</h3>
-            <p>Send commands from Home Screen and Lock Screen widgets on iOS 17+.</p>
+            <p>
+              Small and medium Home Screen widgets send commands without launching the app. Requires
+              iOS 17 or later.
+            </p>
           </article>
           <article class="feature-card">
-            <h3>Focused experience</h3>
-            <p>No account, no media browsing, no playback queue management. Just volume.</p>
+            <h3>Light, dark, and themes</h3>
+            <p>Follow the system appearance or lock in light or dark, then pick the theme you like.</p>
           </article>
         </div>
       </section>
@@ -165,15 +243,17 @@
           <li>
             <span>2</span>
             <div>
-              <h3>Select your TV or speaker</h3>
-              <p>Pick a device, pin it, and keep it ready for quick access in the app and widgets.</p>
+              <h3>Pin the devices you actually use</h3>
+              <p>
+                Pinned devices move to the top of the app with their own slider, and feed your widgets.
+              </p>
             </div>
           </li>
           <li>
             <span>3</span>
             <div>
-              <h3>Control volume anywhere</h3>
-              <p>Use in-app controls or widget buttons for instant volume up, down, and mute.</p>
+              <h3>Add a widget to your Home Screen</h3>
+              <p>Volume up, down, and mute from the Home Screen - the app never has to open.</p>
             </div>
           </li>
         </ol>
@@ -182,29 +262,32 @@
       <section id="pricing" class="section reveal">
         <div class="section-heading">
           <p class="eyebrow">Plans</p>
-          <h2>Start free, upgrade when you need more widget control</h2>
+          <h2>Free to use, Premium when one widget isn't enough</h2>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
             <h3>Free</h3>
-            <p class="price-value">$0</p>
+            <p class="price-value">Download and control, no account</p>
             <ul>
-              <li>In-app volume + mute controls</li>
-              <li>Device discovery + pinning</li>
-              <li>Widgets control your top pinned device</li>
+              <li>Discovery, pinning, sliders, and mute</li>
+              <li>Adjustable volume step and appearance</li>
+              <li>Widgets follow your first pinned device</li>
             </ul>
           </article>
           <article class="price-card highlight">
-            <p class="badge">Popular</p>
+            <p class="badge">Upgrade</p>
             <h3>Premium</h3>
-            <p class="price-value">Unlock advanced widget flexibility</p>
+            <p class="price-value">One in-app purchase</p>
             <ul>
-              <li>Assign different pinned devices per widget</li>
-              <li>Faster multi-room control setup</li>
+              <li>Give every widget its own pinned device</li>
+              <li>Control several rooms from one Home Screen</li>
               <li>Support ongoing development</li>
             </ul>
           </article>
         </div>
+        <p class="pricing-note">
+          Premium is an in-app purchase. Current pricing is shown in the App Store and inside the app.
+        </p>
       </section>
 
       <section id="privacy" class="section section-alt reveal">
@@ -243,7 +326,17 @@
 
     <footer class="site-footer">
       <p>CastVolume</p>
-      <p><span id="year"></span> CastVolume Team. All rights reserved.</p>
+      <p>
+        <a
+          href="https://apps.apple.com/us/app/cast-volume/id6759741348"
+          target="_blank"
+          rel="noopener noreferrer"
+          >App Store</a
+        >
+        <span aria-hidden="true">&middot;</span>
+        <a href="mailto:support@castvolume.app">Support</a>
+      </p>
+      <p>&copy; <span id="year"></span> CastVolume Team. All rights reserved.</p>
     </footer>
   </body>
 </html>

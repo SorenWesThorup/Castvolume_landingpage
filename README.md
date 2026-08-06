@@ -7,13 +7,17 @@ Static landing page for CastVolume, ready to deploy to Simply.com web hosting.
 - `index.html`
 - `styles.css`
 - `script.js`
-- `assets/`
+- `assets/` — app icons (`icon-64/180/512.png`), social card (`og-image.png`)
+- `assets/screenshots/` — the App Store screenshots used on the page
 - `.github/workflows/deploy-simply.yml` (auto deploy on push to `main`)
+
+Only real App Store screenshots are used for product imagery. Do not add rendered
+mockups of the UI: if the app changes, replace `assets/screenshots/*.jpg` with the
+current App Store captures instead.
 
 ## Run locally
 
 ```bash
-cd /Users/sorenthorup/Documents/xcode/CastVolume_Feb2026/landing-page
 python3 -m http.server 8080
 ```
 
