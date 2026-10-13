@@ -8,30 +8,30 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     />
-    <title>CastVolume | Fast volume control for Google Cast devices</title>
+    <title>CastVolume | Volume control widgets for WiiM and Chromecast</title>
     <meta
       name="description"
-      content="CastVolume is a native iPhone app with interactive Home Screen widgets for instant volume and mute control on Google Cast-enabled TVs and speakers."
+      content="CastVolume puts volume and mute on your iPhone Home Screen and Lock Screen, with interactive widgets for Chromecast-enabled speakers and TVs and compatible WiiM receivers. New in 2.1: the WiiM Controls widget with presets and play/pause."
     />
     <link rel="canonical" href="https://castvolume.kommaconsulting.com/" />
     <meta name="theme-color" content="#07131b" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="CastVolume" />
-    <meta property="og:title" content="CastVolume | Fast volume control for Google Cast devices" />
+    <meta property="og:title" content="CastVolume | Volume control widgets for WiiM and Chromecast" />
     <meta
       property="og:description"
-      content="Instant volume and mute for your Cast TVs and speakers - from the app or a Home Screen widget. No account needed."
+      content="Volume and mute widgets for WiiM and Chromecast, plus WiiM presets in 2.1. No account, no subscription."
     />
     <meta property="og:url" content="https://castvolume.kommaconsulting.com/" />
     <meta property="og:image" content="https://castvolume.kommaconsulting.com/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CastVolume | Fast volume control for Google Cast devices" />
+    <meta name="twitter:title" content="CastVolume | Volume control widgets for WiiM and Chromecast" />
     <meta
       name="twitter:description"
-      content="Instant volume and mute for your Cast TVs and speakers - from the app or a Home Screen widget. No account needed."
+      content="Volume and mute widgets for WiiM and Chromecast, plus WiiM presets in 2.1. No account, no subscription."
     />
     <meta name="twitter:image" content="https://castvolume.kommaconsulting.com/assets/og-image.png" />
 
@@ -44,7 +44,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=21" />
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -62,11 +62,11 @@
         <span>CastVolume</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#whats-new">New in 2.1</a>
         <a href="#screenshots">Screenshots</a>
         <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#requirements">Requirements</a>
       </nav>
       <a
         class="button button-small"
@@ -80,11 +80,12 @@
     <main id="top">
       <section class="hero section reveal">
         <div class="hero-copy">
-          <p class="eyebrow">Native iOS app + widgets</p>
-          <h1>Your fastest way to control TV volume from iPhone.</h1>
+          <p class="eyebrow">Volume control widgets · WiiM + Chromecast</p>
+          <h1>Your speakers, one tap away.</h1>
           <p class="lead">
-            CastVolume gives you instant volume and mute control for Google Cast-enabled TVs, speakers,
-            and receivers on your local Wi-Fi. No sign-in. No pairing ritual. No queue clutter.
+            CastVolume puts volume and mute on your Home Screen and Lock Screen for Chromecast-enabled
+            speakers and TVs and compatible WiiM receivers. Keep playing music in the app you already use.
+            CastVolume controls the receiver directly.
           </p>
           <div class="hero-actions">
             <a
@@ -94,140 +95,231 @@
               rel="noopener noreferrer"
               >Download on App Store</a
             >
-            <a class="button button-ghost" href="#how-it-works">See how it works</a>
+            <a class="button button-ghost" href="#whats-new">What's new in 2.1</a>
           </div>
           <ul class="hero-points" aria-label="Product highlights">
-            <li>Finds Cast devices on your Wi-Fi in seconds</li>
-            <li>Pin the rooms you use and control each one directly</li>
-            <li>Volume up, down, and mute straight from a Home Screen widget</li>
+            <li>Interactive widgets for volume and mute, no app launch needed</li>
+            <li>New: WiiM Controls widget with presets and play/pause</li>
+            <li>Control Center, Action Button and Lock Screen controls</li>
           </ul>
         </div>
         <div class="hero-visual">
           <figure class="phone-shot shot-main">
             <img
-              src="./assets/screenshots/screenshot-4.jpg"
-              alt="CastVolume app showing two pinned devices with volume sliders"
+              src="./assets/screenshots/01-widgets.jpg"
+              alt="Volume Remote and Preset Volumes widgets for a WiiM Mini and a living room TV"
               width="600"
-              height="1299"
+              height="1304"
             />
           </figure>
           <figure class="phone-shot shot-left">
             <img
-              src="./assets/screenshots/screenshot-1.jpg"
-              alt="Two CastVolume widgets on the iPhone Home Screen"
+              src="./assets/screenshots/03-home.jpg"
+              alt="CastVolume app controlling a WiiM receiver at 41 percent"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
           </figure>
           <figure class="phone-shot shot-right">
             <img
-              src="./assets/screenshots/screenshot-2.jpg"
-              alt="CastVolume in dark mode with discovered Cast devices"
+              src="./assets/screenshots/04-controls.jpg"
+              alt="Volume controls for the Action Button, Control Center and Lock Screen"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
+          </figure>
+        </div>
+      </section>
+
+      <section id="whats-new" class="section section-alt reveal">
+        <div class="new-layout">
+          <div class="section-heading">
+            <p class="eyebrow">New in 2.1</p>
+            <h2>WiiM Controls widget</h2>
+            <p class="section-lead">
+              A new, optional widget for WiiM receivers. Start a preset, pause or resume, and nudge the
+              volume, all from the Home Screen. The volume widgets you already use don't change.
+            </p>
+            <ul class="check-list">
+              <li>
+                <strong>Your WiiM presets, one tap each.</strong> Medium shows presets 1–2, Large shows 1–4,
+                with their artwork.
+              </li>
+              <li>
+                <strong>Play / pause and volume.</strong> Volume down, a live volume bar, volume up and
+                play/pause on every size.
+              </li>
+              <li>
+                <strong>WiiM Home stays in charge.</strong> Presets appear in WiiM Home's order. To change
+                them, edit or reorder them in WiiM Home and the widget follows.
+              </li>
+              <li>
+                <strong>A WiiM page in the app.</strong> The same controls at real widget size, a device
+                picker, and step-by-step help to add the widget.
+              </li>
+            </ul>
+          </div>
+
+          <figure class="widget-demo" aria-labelledby="widget-demo-caption">
+            <div class="wiim-widget" role="img" aria-label="Illustration of the Medium WiiM Controls widget for a WiiM in the living room, playing Radio Paradise at 35 percent volume">
+              <div class="ww-header">
+                <span class="ww-dot"></span>
+                <span class="ww-name">Living Room</span>
+                <span class="ww-chevron">›</span>
+                <span class="ww-status">Playing</span>
+              </div>
+              <div class="ww-presets">
+                <span class="ww-tile is-active"><span class="ww-art">RP</span>Radio Paradise</span>
+                <span class="ww-tile"><span class="ww-art">JZ</span>Jazz Evenings</span>
+              </div>
+              <div class="ww-controls">
+                <span class="ww-btn">−</span>
+                <span class="ww-bar"><span class="ww-fill">35%</span></span>
+                <span class="ww-btn">+</span>
+                <span class="ww-btn"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><rect x="1" y="1" width="4" height="14" rx="1.5" fill="currentColor" /><rect x="9" y="1" width="4" height="14" rx="1.5" fill="currentColor" /></svg></span>
+              </div>
+            </div>
+            <figcaption id="widget-demo-caption">
+              Illustration of the Medium widget. The Large widget shows four presets in a 2 × 2 grid.
+            </figcaption>
           </figure>
         </div>
       </section>
 
       <section id="screenshots" class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Straight from the App Store listing</p>
-          <h2>Real screens from the shipping app</h2>
+          <p class="eyebrow">From the App Store listing</p>
+          <h2>Real screens from the app</h2>
         </div>
         <div class="screenshots-grid">
           <figure class="screenshot-card">
             <img
-              src="./assets/screenshots/screenshot-4.jpg"
-              alt="Pinned devices with volume sliders in light mode"
+              src="./assets/screenshots/01-widgets.jpg"
+              alt="Volume Remote and Preset Volumes widgets on the Home Screen"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
-            <figcaption>Pin your rooms, control each one</figcaption>
+            <figcaption>Volume at your fingertips</figcaption>
           </figure>
           <figure class="screenshot-card">
             <img
-              src="./assets/screenshots/screenshot-2.jpg"
-              alt="Discovered Cast devices listed in dark mode"
+              src="./assets/screenshots/02-wiim.jpg"
+              alt="WiiM volume widget with music started from WiiM Home"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
-            <figcaption>Discover everything on your Wi-Fi</figcaption>
+            <figcaption>Your WiiM, one tap away</figcaption>
           </figure>
           <figure class="screenshot-card">
             <img
-              src="./assets/screenshots/screenshot-1.jpg"
-              alt="Medium CastVolume widgets with minus, mute, and plus buttons"
+              src="./assets/screenshots/03-home.jpg"
+              alt="The CastVolume app with a WiiM receiver and a living room TV"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
-            <figcaption>Medium widget: down, mute, up</figcaption>
+            <figcaption>WiiM and Chromecast in one remote</figcaption>
           </figure>
           <figure class="screenshot-card">
             <img
-              src="./assets/screenshots/screenshot-3.jpg"
-              alt="Two small CastVolume widgets side by side on the Home Screen"
+              src="./assets/screenshots/04-controls.jpg"
+              alt="Volume and mute controls for the Action Button, Control Center and Lock Screen"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
-            <figcaption>Small widget: one room per tile</figcaption>
+            <figcaption>One press, no app</figcaption>
           </figure>
           <figure class="screenshot-card">
             <img
-              src="./assets/screenshots/screenshot-5.jpg"
-              alt="CastVolume settings with volume step, appearance, and widget options"
+              src="./assets/screenshots/05-presets.jpg"
+              alt="Quiet, Medium and Loud volume presets and the Preset Volumes widget"
               width="600"
-              height="1299"
+              height="1304"
               loading="lazy"
             />
-            <figcaption>Step size, themes, widget setup</figcaption>
+            <figcaption>Preset volumes</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="./assets/screenshots/06-live-tile.jpg"
+              alt="Live Tile on the Lock Screen with volume controls for the kitchen TV"
+              width="600"
+              height="1304"
+              loading="lazy"
+            />
+            <figcaption>Live Tile on the Lock Screen</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="./assets/screenshots/07-diagnostics.jpg"
+              alt="Diagnostics screen explaining why no Cast devices were found"
+              width="600"
+              height="1304"
+              loading="lazy"
+            />
+            <figcaption>Know why it won't connect</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img
+              src="./assets/screenshots/08-settings.jpg"
+              alt="Settings with theme, volume step, preset volumes and Live Tile options"
+              width="600"
+              height="1304"
+              loading="lazy"
+            />
+            <figcaption>Themes, step size and presets</figcaption>
           </figure>
         </div>
       </section>
 
-      <section id="features" class="section reveal">
+      <section id="features" class="section section-alt reveal">
         <div class="section-heading">
           <p class="eyebrow">Built for everyday control</p>
-          <h2>Simple power, right where you need it</h2>
+          <h2>Volume wherever your thumb already is</h2>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <h3>Fast discovery</h3>
-            <p>Tap Discover to find Google Cast-enabled devices over Bonjour on the same network.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Precision volume</h3>
-            <p>Drag the slider for an exact level, or step up and down at 1%, 3%, or 5% per tap.</p>
-          </article>
-          <article class="feature-card">
-            <h3>One-tap mute</h3>
-            <p>Silence interruptions instantly without opening your streaming app.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Pinned rooms</h3>
-            <p>Pin your regulars to the top of the app, each with its own slider and live level.</p>
-          </article>
-          <article class="feature-card">
             <h3>Interactive widgets</h3>
             <p>
-              Small and medium Home Screen widgets send commands without launching the app. Requires
-              iOS 17 or later.
+              Volume Remote widgets for the Home Screen and Lock Screen change volume and mute without
+              opening the app.
             </p>
           </article>
           <article class="feature-card">
-            <h3>Light, dark, and themes</h3>
-            <p>Follow the system appearance or lock in light or dark, then pick the theme you like.</p>
+            <h3>WiiM and Chromecast</h3>
+            <p>
+              Control Chromecast-enabled speakers and TVs and compatible WiiM receivers side by side, even
+              when music was started in WiiM Home or with its remote.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Control Center and Action Button</h3>
+            <p>Volume down, volume up and mute as Controls. One press, even with the screen locked.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Live Tile</h3>
+            <p>A Live Activity keeps volume controls on the Lock Screen while something is playing.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Preset volumes</h3>
+            <p>Save exact levels like Quiet, Medium and Loud, then tap them from a dedicated widget.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Diagnostics</h3>
+            <p>
+              When a receiver won't connect, CastVolume names the cause, suggests what to try next and copies
+              the details for support.
+            </p>
           </article>
         </div>
       </section>
 
-      <section id="how-it-works" class="section section-alt reveal">
+      <section id="how-it-works" class="section reveal">
         <div class="section-heading">
           <p class="eyebrow">How it works</p>
           <h2>Three steps to faster volume control</h2>
@@ -236,72 +328,83 @@
           <li>
             <span>1</span>
             <div>
-              <h3>Open CastVolume and tap Discover</h3>
-              <p>Allow local network access so the app can find Cast-enabled devices nearby.</p>
+              <h3>Find your receivers</h3>
+              <p>
+                Allow Local Network access and CastVolume discovers receivers on your Wi-Fi. You can also add
+                a WiiM by IP address.
+              </p>
             </div>
           </li>
           <li>
             <span>2</span>
             <div>
-              <h3>Pin the devices you actually use</h3>
-              <p>
-                Pinned devices move to the top of the app with their own slider, and feed your widgets.
-              </p>
+              <h3>Pin the rooms you use</h3>
+              <p>Pinned receivers move to the top of the app and become the targets for your widgets.</p>
             </div>
           </li>
           <li>
             <span>3</span>
             <div>
-              <h3>Add a widget to your Home Screen</h3>
-              <p>Volume up, down, and mute from the Home Screen - the app never has to open.</p>
+              <h3>Add a widget</h3>
+              <p>
+                Choose Volume Remote, Preset Volumes or the new WiiM Controls widget, and control volume
+                without opening the app.
+              </p>
             </div>
           </li>
         </ol>
       </section>
 
-      <section id="pricing" class="section reveal">
+      <section id="pricing" class="section section-alt reveal">
         <div class="section-heading">
           <p class="eyebrow">Plans</p>
-          <h2>Free to use, Premium when one widget isn't enough</h2>
+          <h2>Free to use. One purchase for more rooms.</h2>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
             <h3>Free</h3>
-            <p class="price-value">Download and control, no account</p>
+            <p class="price-value">No ads, no account</p>
             <ul>
-              <li>Discovery, pinning, sliders, and mute</li>
-              <li>Adjustable volume step and appearance</li>
-              <li>Widgets follow your first pinned device</li>
+              <li>Volume and mute in the app, widgets and Control Center</li>
+              <li>Chromecast and WiiM discovery, plus add a WiiM by IP</li>
+              <li>One pinned receiver for your widgets, including WiiM Controls</li>
             </ul>
           </article>
           <article class="price-card highlight">
-            <p class="badge">Upgrade</p>
+            <p class="badge">One-time</p>
             <h3>Premium</h3>
-            <p class="price-value">One in-app purchase</p>
+            <p class="price-value">One purchase, no subscription</p>
             <ul>
-              <li>Give every widget its own pinned device</li>
-              <li>Control several rooms from one Home Screen</li>
-              <li>Support ongoing development</li>
+              <li>Pin several receivers and pick a different one for each widget</li>
+              <li>Saved volume presets and the Preset Volumes widget</li>
+              <li>Choose your volume step and customise themes</li>
+              <li>Covers both Chromecast and WiiM</li>
             </ul>
           </article>
         </div>
         <p class="pricing-note">
-          Premium is an in-app purchase. Current pricing is shown in the App Store and inside the app.
+          Premium is a one-time in-app purchase. Current pricing is shown in the App Store and inside the app.
+          Existing Premium purchases keep working.
         </p>
       </section>
 
-      <section id="privacy" class="section section-alt reveal">
+      <section id="requirements" class="section reveal">
         <div class="privacy-card">
-          <p class="eyebrow">Privacy first</p>
-          <h2>Your control stays local</h2>
+          <p class="eyebrow">Local and private</p>
+          <h2>Your control stays on your Wi-Fi</h2>
           <p>
-            CastVolume is designed for local-network control. It connects to devices on your Wi-Fi to send
-            volume and mute commands. No account is required and no cloud dashboard is needed to get started.
+            CastVolume talks to your receivers over the local network to send volume, mute and playback
+            commands. No account, no cloud service. It controls receivers; it doesn't start or stream music
+            and isn't a universal AirPlay remote.
           </p>
           <ul>
-            <li>Requires iPhone and Cast device on the same Wi-Fi network</li>
-            <li>Uses iOS local network permission for discovery</li>
-            <li>No sign-in flow to use core controls</li>
+            <li>iPhone or iPad with iOS 18.6 or later</li>
+            <li>iPhone and receiver on the same Wi-Fi, with Local Network access allowed</li>
+            <li>
+              WiiM volume needs variable volume output. If Fixed Volume Output is on in WiiM Home, turn it
+              off.
+            </li>
+            <li>A locked iPhone may ask you to unlock before a widget command runs</li>
           </ul>
         </div>
       </section>
@@ -309,7 +412,7 @@
       <section id="download" class="section reveal">
         <div class="download-cta">
           <h2>Ready to control volume faster?</h2>
-          <p>Install CastVolume on iPhone and take volume control out of app-switching chaos.</p>
+          <p>Install CastVolume and put your speakers one tap away.</p>
           <div class="hero-actions">
             <a
               class="button"
@@ -336,7 +439,9 @@
         <span aria-hidden="true">&middot;</span>
         <a href="mailto:support@castvolume.app">Support</a>
       </p>
-      <p>&copy; <span id="year"></span> CastVolume Team. All rights reserved.</p>
+      <p>
+&copy; <span id="year"></span> CastVolume Team. All rights reserved.
+      </p>
     </footer>
   </body>
 </html>

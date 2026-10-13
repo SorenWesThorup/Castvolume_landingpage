@@ -27,6 +27,10 @@ body {
   padding: 0;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   min-height: 100vh;
   color: var(--text-main);
@@ -270,7 +274,7 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 600 / 1299;
+  aspect-ratio: 600 / 1304;
   object-fit: cover;
 }
 
@@ -305,7 +309,7 @@ h1 {
   margin-top: 1.6rem;
   display: grid;
   gap: 0.9rem;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .screenshot-card {
@@ -320,7 +324,7 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 600 / 1299;
+  aspect-ratio: 600 / 1304;
   object-fit: cover;
   border-radius: 14px;
 }
@@ -541,6 +545,196 @@ h1 {
   transform: translateY(0);
 }
 
+/* New in 2.1 */
+
+.section-lead {
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  max-width: 56ch;
+}
+
+.new-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.check-list {
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  color: var(--text-muted);
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  width: 0.7rem;
+  height: 0.4rem;
+  border-left: 2px solid var(--accent-strong);
+  border-bottom: 2px solid var(--accent-strong);
+  transform: rotate(-45deg);
+}
+
+.check-list strong {
+  color: var(--text-main);
+}
+
+.widget-demo {
+  margin: 0;
+  padding: clamp(1.2rem, 4vw, 2.2rem);
+  border-radius: calc(var(--radius) + 8px);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(63, 126, 162, 0.55), transparent 55%),
+    radial-gradient(circle at 85% 90%, rgba(255, 138, 61, 0.35), transparent 50%),
+    #0b1620;
+}
+
+.widget-demo figcaption {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.wiim-widget {
+  --w-bg: #1a2232;
+  --w-face: #252f43;
+  --w-line: rgba(255, 255, 255, 0.1);
+  --w-accent: #2f8cff;
+  --w-muted: #9aa6bb;
+  max-width: 364px;
+  margin-inline: auto;
+  padding: 14px;
+  display: grid;
+  gap: 14px;
+  border-radius: 24px;
+  background: var(--w-bg);
+  box-shadow: var(--shadow);
+  font-family: -apple-system, "SF Pro Rounded", "Space Grotesk", sans-serif;
+  color: #fff;
+}
+
+.ww-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 20px;
+}
+
+.ww-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34c759;
+}
+
+.ww-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ww-chevron {
+  color: var(--w-muted);
+  font-size: 14px;
+}
+
+.ww-status {
+  margin-left: auto;
+  color: var(--w-muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.ww-presets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ww-tile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--w-line);
+  background: var(--w-face);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.ww-tile.is-active {
+  border-color: var(--w-accent);
+}
+
+.ww-art {
+  flex: 0 0 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #121927;
+  color: var(--w-muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ww-controls {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px 44px;
+  align-items: center;
+  gap: 12px;
+}
+
+.ww-btn {
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--w-line);
+  background: var(--w-face);
+  color: var(--w-accent);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ww-bar {
+  height: 22px;
+  border-radius: 999px;
+  background: #121927;
+  overflow: hidden;
+}
+
+.ww-fill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 35%;
+  height: 100%;
+  padding-right: 6px;
+  border-radius: 999px;
+  background: var(--w-accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
 @keyframes floatMain {
   0%,
   100% {
@@ -621,6 +815,15 @@ h1 {
 
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .new-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .screenshots-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
